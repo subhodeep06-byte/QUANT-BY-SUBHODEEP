@@ -11,8 +11,9 @@ from datetime import datetime
 # ============================
 # 1. TELEGRAM CONFIG
 # ============================
-BOT_TOKEN = "7813794688:AAG7_6iw3rS0Nn0F30LlA-TP_zMIA_t-kXg"
-CHAT_ID = 5246738229
+BOT_TOKEN = st.secrets["BOT_TOKEN"]
+CHAT_ID = st.secrets["CHAT_ID"]
+
 
 def send_telegram(message):
     try:
@@ -107,4 +108,5 @@ if st.button("Run ML Analysis"):
                 st.pyplot(fig)
 
         except Exception as e:
+
             st.error(f"Analysis Error: {e}")
